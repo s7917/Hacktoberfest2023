@@ -1,12 +1,6 @@
 #include<bits/stdc++.h>
 #include<iostream>
 using namespace std;
-// 1. first we divide in two parts 
-// 2. find the middle part .
-// 3. check the target value is greater or less or equal.
-// 4. if target is equal = mid then return mid.
-// 5. else if target is less then high becomes mid-1 and check furthur.
-// 6 . if target greater mid then low = mid+1 and furthur operation are allowed.
 
 int binarysearch(vector<int>&v,int target){
     int l = 0;
