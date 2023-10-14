@@ -1,6 +1,10 @@
 // A C++ program to print topological
 // sorting of a DAG
 #include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <stack>
+#include <queue>
 using namespace std;
 
 // Class to represent a graph
