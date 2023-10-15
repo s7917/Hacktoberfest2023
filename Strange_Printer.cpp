@@ -1,4 +1,6 @@
-///C++ Code for Strange_Printer
+#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
 class Strange {
 public:
 bool dfs(int col,int arr[][4],vector<vector<int>>& grid,int* visited){
@@ -64,3 +66,24 @@ bool dfs(int col,int arr[][4],vector<vector<int>>& grid,int* visited){
         return 1;
     }
 };
+
+int main() {
+    // Create an instance of the Solution class
+    Strange strange;
+
+    // Define a sample grid (you can modify this as needed)
+    std::vector<std::vector<int>> printableGrid = {{1,1,1,1},{1,2,2,1},{1,2,2,1},{1,1,1,1}};
+
+
+    // Call the isPrintable function
+    bool printable = strange.isPrintable(printableGrid);
+
+    // Display the result
+    if (printable) {
+        std::cout << "The grid is printable." << std::endl;
+    } else {
+        std::cout << "The grid is not printable." << std::endl;
+    }
+
+    return 0;
+}
