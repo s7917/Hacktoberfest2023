@@ -1,24 +1,28 @@
 
 // Cpp program for factorial of a number 
-#include <iostream> 
-using namespace std; 
-  
-// function to find factorial of given number 
-unsigned int factorial(unsigned int n) 
-{ 
-    int res = 1, i; 
-    for (i = 2; i <= n; i++) 
-        res *= i; 
-    return res; 
-} 
-  
-// Driver code 
-int main() 
-{ 
-    int num = 5; 
-    cout << "Factorial of "
-         << num << " is "
-         << factorial(num) << endl; 
-    return 0; 
-} 
-//Contributed by Saptash Chaubey
+##include <iostream>
+
+// Recursive function to calculate the factorial of a number
+unsigned long long factorial(int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return static_cast<unsigned long long>(n) * factorial(n - 1);
+    }
+}
+
+int main() {
+    int num;
+
+    std::cout << "Enter a non-negative integer: ";
+    std::cin >> num;
+
+    if (num < 0) {
+        std::cout << "Factorial is not defined for negative numbers." << std::endl;
+    } else {
+        unsigned long long result = factorial(num);
+        std::cout << "Factorial of " << num << " is " << result << std::endl;
+    }
+
+    return 0;
+}
