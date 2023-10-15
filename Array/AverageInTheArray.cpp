@@ -1,24 +1,31 @@
 // C++ program to calculate average of array elements
 #include <iostream>
-using namespace std;
 
-// Function that return average of an array.
-double average(int a[], int n)
-{
-	// Find sum of array element
-	int sum = 0;
-	for (int i=0; i<n; i++)
-	sum += a[i];
+int main() {
+    int n;
 
-	return (double)sum/n;
-}
+    // Ask the user for the array size
+    std::cout << "Enter the size of the array: ";
+    std::cin >> n;
 
-// Driver code
-int main()
-{
-	int arr[] = {10, 2, 3, 4, 5, 6, 7, 8, 9};
-	int n = sizeof(arr)/sizeof(arr[0]);
+    if (n <= 0) {
+        std::cout << "Invalid array size." << std::endl;
+        return 1; // Exit with an error code
+    }
 
-	cout << average(arr, n) << endl;
-	return 0;
+    int arr[n];
+    double sum = 0.0;
+
+    // Input array elements
+    std::cout << "Enter " << n << " elements:" << std::endl;
+    for (int i = 0; i < n; i++) {
+        std::cin >> arr[i];
+        sum += arr[i]; // Calculate the sum as you input elements
+    }
+
+    double average = sum / n; // Calculate the average
+
+    std::cout << "Average: " << average << std::endl;
+
+    return 0;
 }
