@@ -52,11 +52,27 @@ void deleteNode(node* &head, int pos) {
     delete todelete; // to free the memory occupied by the node.
 }
 
+void insertAfterkey(node* head,int key,int d){
+    node* pr = head;
+    while(pr != NULL && pr->value != key){
+        pr = pr->next;
+    }
+    
+    if (pr != NULL){
+        node* temp = new node(d);
+        node* temp2 = pr->next;
+        
+        pr->next = temp;
+        temp->next = temp2;
+    }
+}
+
 void display(node* head) {
     while(head != nullptr) {
         cout << head->value << " ";
         head = head->next;
     }
+    cout<<"\n";
 }
 
 int main(void) {
@@ -66,5 +82,13 @@ int main(void) {
     insertAtBack(head, 4);
     insertAtBack(head, 5);
     insertAtBack(head, 7);
+    insertAtFront(head,888);
+    
+    display(head);
+    
+    deleteNode(head,2);
+    display(head);
 
+    insertAfterkey(head,1,916);
+    display(head);
 }
