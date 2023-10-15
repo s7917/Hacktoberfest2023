@@ -1,4 +1,4 @@
-// C++ program to rot all oranges when you can move in all the four direction from a rotten orange
+// C++
 #include <iostream>
 #include <queue>
 using namespace std;
