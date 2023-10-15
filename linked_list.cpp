@@ -36,6 +36,22 @@ void insertAtFront(node* &head, int val) {
     head = n;
 }
 
+void deleteNode(node* &head, int pos) {
+    if(pos == 0) {
+        node* todelete = head;
+        head = head->next;
+        delete todelete; // to free the memory occupied by the node.
+        return;
+    }
+
+    node* pointer = head;
+    for(int i = 0; i < pos-1; i++) pointer = pointer->next;
+
+    node* todelete = pointer->next;
+    pointer->next = pointer->next->next;
+    delete todelete; // to free the memory occupied by the node.
+}
+
 void display(node* head) {
     while(head != nullptr) {
         cout << head->value << " ";
