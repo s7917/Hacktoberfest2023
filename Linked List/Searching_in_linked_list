@@ -1,0 +1,54 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    Node head;
+
+    public void append(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+
+    public boolean search(int target) {
+        Node current = head;
+        while (current != null) {
+            if (current.data == target) {
+                return true; // Found the target element in the linked list
+            }
+            current = current.next;
+        }
+        return false; // Target element not found in the linked list
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.append(4);
+
+        int target = 3;
+
+        if (list.search(target)) {
+            System.out.println(target + " found in the linked list.");
+        } else {
+            System.out.println(target + " not found in the linked list.");
+        }
+   
